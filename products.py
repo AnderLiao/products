@@ -7,9 +7,7 @@ while True:
 	if product == 'q':
 		break
 	price = input('Price: ') # Create the price of product
-	session = [] # Create a list in this session
-	session.append(product)
-	session.append(price)
-	products.append(session)
-print(products[0]) # Get first product
+	products.append([product, price])
+print(products)
+print(products[1]) # Get first product
 print(products[0][1]) # Get the price of first product
