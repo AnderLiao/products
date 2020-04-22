@@ -16,6 +16,7 @@ for product in products:
 	print(product)
 
 # Create the CSV file and save the data accordingly
-with open('product_list.csv', 'w') as file:
+with open('product_list.csv', 'w', encoding='utf-8') as file:
+	file.write('品項,價格\n')
 	for product in products:
 		file.write(product[0] + ',' + str(product[1]) + '\n')
