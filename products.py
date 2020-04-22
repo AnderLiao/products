@@ -1,9 +1,17 @@
-# Create a product list and the price for each product.
-# User can manually input the name and price of product.
+# Check the file
+products = []
+with open('product_list.csv', 'r', encoding='utf-8') as file:
+	for line in file:
+		if '品項,價格' in line:
+			continue # In case the header will be rewritten again
+		product, price = line.strip().split(',')
+		products.append([product, price])
+print(products)
 
-# Create the product list for new input
-products =[]
+
+# Add the product and price
 while True:
+	# User can manually input the name and price of product.
 	product = input('Product: ') # Create the product
 	if product == 'q':
 		break
@@ -11,11 +19,11 @@ while True:
 	products.append([product, price])
 print(products)
 
-# Show the product list
+# Show the new/updated product list
 for product in products:
 	print(product)
 
-# Create the CSV file and save the data accordingly
+# Create or update the file
 with open('product_list.csv', 'w', encoding='utf-8') as file:
 	file.write('品項,價格\n')
 	for product in products:
