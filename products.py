@@ -1,15 +1,21 @@
 # Create a product list and the price for each product.
 # User can manually input the name and price of product.
 
+# Create the product list for new input
 products =[]
 while True:
 	product = input('Product: ') # Create the product
 	if product == 'q':
 		break
-	price = input('Price: ') # Create the price of product
+	price = int(input('Price: ')) # Create the price of product
 	products.append([product, price])
 print(products)
 
 # Show the product list
 for product in products:
 	print(product)
+
+# Create the CSV file and save the data accordingly
+with open('product_list.csv', 'w') as file:
+	for product in products:
+		file.write(product[0] + ',' + str(product[1]) + '\n')
