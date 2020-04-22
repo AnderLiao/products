@@ -9,5 +9,7 @@ while True:
 	price = input('Price: ') # Create the price of product
 	products.append([product, price])
 print(products)
-print(products[1]) # Get first product
-print(products[0][1]) # Get the price of first product
+
+# Show the product list
+for product in products:
+	print(product)
